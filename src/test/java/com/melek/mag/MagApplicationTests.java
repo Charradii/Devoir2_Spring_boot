@@ -30,55 +30,49 @@ class MagApplicationTests {
 			}
 			
 		}
-		@Test
-		public void testFindArtCnt(){
-			articles =  articleRepository.findByTitreContains("c");
-			for(article a :articles){
-				System.out.println(a);
-			}
-			
-		}
-		@Test
-		public void testFindArtTitreCategory(){
-			articles =  articleRepository.findByTitreCategory("abcd", "Sport");
-			for(article a :articles){
-				System.out.println(a);
-			}
-			
-		}
+	@Test
+	public void testFindArtCnt(){
+		articles =  articleRepository.findByTitreContains("c");
+		for(article a :articles){
+			System.out.println(a);
+		}		
+	}
+	@Test
+	public void testFindArtTitreCategory(){
+		articles =  articleRepository.findByTitreCategory("abcd", "Sport");
+		for(article a :articles){
+			System.out.println(a);
+		}	
+	}
 		
-		@Test
-		public void testFindArtEcrivain(){
-			ecrivain e = new ecrivain();
-			e.setIdEcrivain(1L);
-			articles =  articleRepository.findByEcrivain(e);
-			for(article a :articles){
-				System.out.println(a);
-			}
-			
-		}
-		@Test
-		public void testFindbyidEcrivain(){
-			articles =  articleRepository.findByEcrivainIdEcrivain(1L);
-			for(article a :articles){
-				System.out.println(a);
-			}
-			
-		}
-		@Test
-		public void testFindbyOrderByTitreAsc(){
-			articles =  articleRepository.findByOrderByTitreAsc();
-			for(article a :articles){
-				System.out.println(a);
-			}
-			
-		}
-		@Test
-		public void testtrierArticleTitreDescription(){
-			articles =  articleRepository.trierArticlesTitreDescription();
-			for(article a :articles){
-				System.out.println(a);
-			}
-			
-		}
+	@Test
+	public void testFindArtEcrivain(){
+		ecrivain e = new ecrivain();
+		e.setIdEcrivain(1L);
+		articles =  articleRepository.findByEcrivain(e);
+		for(article a :articles){
+			System.out.println(a);
+		}		
+	}
+	@Test
+	public void testFindbyidEcrivain(){
+		articles =  articleRepository.findByEcrivainIdEcrivain(1L);
+		for(article a :articles){
+			System.out.println(a);
+		}	
+	}
+	@Test
+	public void testFindbyOrderByTitreAsc(){
+		articles =  articleRepository.findByOrderByTitreAsc();
+		for(article a :articles){
+			System.out.println(a);
+		}		
+	}
+	@Test
+	public void testtrierArticleTitreDescription(){
+		articles =  articleRepository.trierArticlesTitreDescription();
+		for(article a :articles){
+			System.out.println(a);
+		}		
+	}
 }

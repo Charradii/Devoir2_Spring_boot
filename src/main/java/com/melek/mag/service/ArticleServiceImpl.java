@@ -13,6 +13,27 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleRepository articleRepository;
 
     @Override
+    public article saveArticle(article a){
+        return articleRepository.save(a);
+    }
+    @Override
+    public article updateArticle(article a){
+        return articleRepository.save(a);
+    }
+    @Override
+    public void deleteArticle(article a){
+        articleRepository.delete(a);
+    }
+    @Override
+    public void deleteArticleById(Long id){
+        articleRepository.deleteById(id);
+    }
+
+    @Override
+    public List<article> findByIdArticle(Long id){
+        return articleRepository.findByIdArticle(id);
+    }
+    @Override
     public List<article> findByTitre(String n) {
         return articleRepository.findByTitre(n);
     }
@@ -39,5 +60,9 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<article> trierArticlesTitreDescription(){
         return articleRepository.trierArticlesTitreDescription();
+    }
+    @Override
+    public List<article> getAllArticles(){
+        return articleRepository.findAll();
     }
 }

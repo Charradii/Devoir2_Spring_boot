@@ -6,10 +6,14 @@ import com.melek.mag.entities.ecrivain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 
+@RepositoryRestResource(path="rest")
 public interface ArticleRepository extends JpaRepository<article, Long>{
+
     
+    List<article> findByIdArticle(Long id);
     List<article> findByTitre(String n);
 
     List<article> findByTitreContains(String n);
@@ -29,5 +33,6 @@ public interface ArticleRepository extends JpaRepository<article, Long>{
 
     @Query("select a from article a order by a.titre ASC, a.Description DESC")
     List<article> trierArticlesTitreDescription();
+    List<article> findAll();
 
 }
