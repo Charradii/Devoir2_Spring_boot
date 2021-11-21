@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "mag",
+			"path": "."
+		},
+		{
+			"path": "..\\users_microservice"
+		}
+	],
+	"settings": {}
+}

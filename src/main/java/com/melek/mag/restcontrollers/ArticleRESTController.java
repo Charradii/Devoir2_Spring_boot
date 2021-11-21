@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins="*")
 public class ArticleRESTController {
     @Autowired
     ArticleService articleService;
     
-    @RequestMapping(method=RequestMethod.GET)
+    @RequestMapping(path="all",method=RequestMethod.GET)
     public List<article> getAllArticles(){
         return articleService.getAllArticles();
     }
@@ -36,7 +36,8 @@ public class ArticleRESTController {
         return articleService.updateArticle(a);
     }
     @RequestMapping(value="/{id}",method = RequestMethod.DELETE)
-    public void deleteProduit(@PathVariable("id") Long id){
+    public void deleteArticle(@PathVariable("id") Long id){
         articleService.deleteArticleById(id);
     }
+    
 }
